@@ -7,8 +7,8 @@ def EventInput():
     input_event = input('enter an event you\'re about to do\n')
 
     current_time = datetime.now()
-    f.write(input_event+'\n')
-    f.write(current_time.strftime("%Y-%m-%d %H:%M:%S")+'\n')
+    f.write(input_event+', >> ')
+    f.write(current_time.strftime("%Y-%m-%d %H:%M:%S")+' >> ')
     f.close()
 
 def TimeCalc():
@@ -23,15 +23,18 @@ def TimeCalc():
         f.close()
 
         f = open('Time Manager.txt','a')
-        f.write('LastEventDuration is '+str(newtime-oldtime)+'\n\n')
+        f.write(str(newtime-oldtime)+','+' >> ')
         f.close()
+    f = open('Time Manager.txt','a')
+    f.write('\n')
+    f.close()
 
 def Update():
     current_time = datetime.now()
     f = open('Update.txt','w')
     f.write(current_time.strftime("%Y-%m-%d %H:%M:%S"))
     f.close()
-
+    
 if __name__ == '__main__':
     EventInput()
     TimeCalc()
