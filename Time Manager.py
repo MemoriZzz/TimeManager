@@ -1,3 +1,17 @@
+# READ ME #
+
+# 1. enter anything you want to record your events #
+
+# 2. ensure all the same events have a same name, or their time cannot be added #
+
+# 3. enter "sleep" to record your sleep time #
+
+# 4. the end of event "sleep" is the start of a new day #
+
+# 5. enter "summary" to check all things you've recorded #
+
+# 6. enter "summarytoday" to check all things you've recorded today #
+
 from datetime import datetime
 import os
 import time
