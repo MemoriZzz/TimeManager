@@ -176,6 +176,28 @@ def AddTimeUp():
     from collections import Counter
     for dicts in dictionary_list:
         final_dictionary = dict(Counter(final_dictionary)+Counter(dicts))
+
+    # percentage
+
+    key_list = []
+    value_list = []
+    percentage_list = []
+    event_percentage_list = []
+    for key,value in final_dictionary.items():
+        key_list.append(key)
+        value_list.append(value)
+
+    sum_seconds = 0
+    for value_list_element in value_list:
+        sum_seconds += value_list_element
+
+    for value_list_element in value_list:
+        percentage_list.append('%.2f%%' % ((value_list_element/sum_seconds)* 100))
+
+    for i,j in map(list,zip(key_list, percentage_list)):
+        event_percentage_list.append(i+':'+j)
+    print(event_percentage_list)
+    
     return final_dictionary
 
 
@@ -271,6 +293,28 @@ def AddTimeUpToday():
     from collections import Counter
     for dicts in dictionary_list:
         final_dictionary = dict(Counter(final_dictionary)+Counter(dicts))
+
+    # percentage
+
+    key_list = []
+    value_list = []
+    percentage_list = []
+    event_percentage_list = []
+    for key,value in final_dictionary.items():
+        key_list.append(key)
+        value_list.append(value)
+
+    sum_seconds = 0
+    for value_list_element in value_list:
+        sum_seconds += value_list_element
+
+    for value_list_element in value_list:
+        percentage_list.append('%.2f%%' % ((value_list_element/sum_seconds)* 100))
+
+    for i,j in map(list,zip(key_list, percentage_list)):
+        event_percentage_list.append(i+':'+j)
+    print(event_percentage_list)
+        
     return final_dictionary
 
 
@@ -312,6 +356,8 @@ if __name__ == '__main__':
         for i in range(len(final_time_list)):
             print(final_events_list[i]+':')
             print(final_time_list[i])
+        
+        
 
             
     elif input_event == 'summarytoday':
@@ -324,9 +370,9 @@ if __name__ == '__main__':
         for i in range(len(final_time_list)):
             print(final_events_list[i]+':')
             print(final_time_list[i])
-            
+        
 
-    elif input_event.find('>>') ==1:
+    elif input_event.find('>>') == 1:
         print ('input error, string\">>\"cannot be included')
         
     else:
